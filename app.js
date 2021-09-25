@@ -1,11 +1,10 @@
 const express = require('express');
 
 const pgClient = require('./dbConnect.js');
-//to handle the conversation with json type
-const bodyParser = require('body-parser');
+
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json()); //middleware to handle data in json format
 
 //routes
 app.get('/users', (req, res)=>{
